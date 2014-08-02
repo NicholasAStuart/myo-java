@@ -5,10 +5,10 @@ import com.thalmic.myo.Myo;
 
 /*
  * JVM Arguments to help debug.
--Xcheck:jni
--XX:+ShowMessageBoxOnError
--XX:+UseOSErrorReporting
-*/
+ -Xcheck:jni
+ -XX:+ShowMessageBoxOnError
+ -XX:+UseOSErrorReporting
+ */
 public class HelloMyo {
     public static void main(String[] args) {
 	try {
@@ -27,7 +27,7 @@ public class HelloMyo {
 
 	    while (true) {
 		hub.run(1000 / 20);
-		System.out.println(dataCollector);
+		System.out.print(dataCollector);
 	    }
 	} catch (Exception e) {
 	    System.err.println("Error: ");
