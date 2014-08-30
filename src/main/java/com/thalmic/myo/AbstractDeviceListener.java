@@ -8,6 +8,9 @@ public class AbstractDeviceListener implements DeviceListener {
     public void onPair(Myo myo, long timestamp, FirmwareVersion firmwareVersion) {}
 
     @Override
+    public void onUnpair(Myo myo, long timestamp) {}
+    
+    @Override
     public void onConnect(Myo myo, long timestamp, FirmwareVersion firmwareVersion) {}
 
     @Override

@@ -74,6 +74,10 @@ public class DataCollector implements DeviceListener {
     }
 
     @Override
+    public void onUnpair(Myo myo, long timestamp) {
+    }
+
+    @Override
     public void onGyroscopeData(Myo myo, long timestamp, Vector3 gyro) {
     }
 

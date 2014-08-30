@@ -6,6 +6,8 @@ import com.thalmic.myo.enums.XDirection;
 public interface DeviceListener {
     public void onPair(Myo myo, long timestamp, FirmwareVersion firmwareVersion);
 
+    public void onUnpair(Myo myo, long timestamp);
+    
     public void onConnect(Myo myo, long timestamp, FirmwareVersion firmwareVersion);
 
     public void onDisconnect(Myo myo, long timestamp);
