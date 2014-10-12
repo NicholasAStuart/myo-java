@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.thalmic</groupId>
     <artifactId>myo-java</artifactId>
-    <version>beta3</version>
+    <version>beta4</version>
     <name>Myo Java API</name>
     <description>Java API for Thalmic's Myo device.</description>
     <url>https://github.com/NicholasAStuart/myo-java</url>

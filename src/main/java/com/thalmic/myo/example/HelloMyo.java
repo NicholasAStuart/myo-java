@@ -27,7 +27,7 @@ public class HelloMyo {
 
 	    while (true) {
 		hub.run(1000 / 20);
-		System.out.print(dataCollector);
+//		System.out.print(dataCollector);
 	    }
 	} catch (Exception e) {
 	    System.err.println("Error: ");
