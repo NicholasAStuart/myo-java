@@ -44,3 +44,4 @@ local.properties
 .texlipse
 /target
 /javah.bat
+.DS_Store
