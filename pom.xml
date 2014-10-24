@@ -6,6 +6,13 @@
     <groupId>com.thalmic</groupId>
     <artifactId>myo-java</artifactId>
     <version>beta5</version>
+    
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
+    </parent>
+    
     <name>Myo Java API</name>
     <description>Java API for Thalmic's Myo device.</description>
     <url>https://github.com/NicholasAStuart/myo-java</url>
@@ -17,20 +24,23 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+    
     <contributors>
         <contributor>
             <name>Nicholas A. Stuart</name>
             <email>nicholasastuart@gmail.com</email>
             <roles>
-                <role>Primary Developer</role>
+                <role>Developer</role>
             </roles>
         </contributor>
     </contributors>
+    
     <scm>
-        <connection>scm:git:github.com/NicholasAStuart/myo-java</connection>
-        <url>scm:git:github.com/NicholasAStuart/myo-java</url>
-        <developerConnection>scm:git:github.com/NicholasAStuart/myo-java</developerConnection>
+        <connection>scm:git:git@github.com/NicholasAStuart/myo-java</connection>
+        <url>scm:git:git@github.com/NicholasAStuart/myo-java</url>
+        <developerConnection>scm:git:git@github.com/NicholasAStuart/myo-java</developerConnection>
     </scm>
+    
     <build>
         <plugins>
             <plugin>
@@ -48,7 +58,6 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <!-- <addClasspath>true</addClasspath> -->
                             <mainClass>com.thalmic.myo.example.HelloMyo</mainClass>
                         </manifest>
                     </archive>
