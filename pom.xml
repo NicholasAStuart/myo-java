@@ -36,9 +36,9 @@
     </contributors>
     
     <scm>
-        <connection>scm:git:git@github.com/NicholasAStuart/myo-java</connection>
-        <url>scm:git:git@github.com/NicholasAStuart/myo-java</url>
-        <developerConnection>scm:git:git@github.com/NicholasAStuart/myo-java</developerConnection>
+        <connection>scm:git:git@github.com/NicholasAStuart/myo-java.git</connection>
+        <url>git@github.com/NicholasAStuart/myo-java.git</url>
+        <developerConnection>scm:git:git@github.com/NicholasAStuart/myo-java.git</developerConnection>
     </scm>
     
     <build>
