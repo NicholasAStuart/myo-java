@@ -3,10 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.thalmic</groupId>
+    <groupId>com.github.nicholasastuart</groupId>
     <artifactId>myo-java</artifactId>
     <version>beta5</version>
-    
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
@@ -16,7 +15,6 @@
     <name>Myo Java API</name>
     <description>Java API for Thalmic's Myo device.</description>
     <url>https://github.com/NicholasAStuart/myo-java</url>
-    
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -24,7 +22,6 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    
     <contributors>
         <contributor>
             <name>Nicholas A. Stuart</name>
@@ -34,19 +31,16 @@
             </roles>
         </contributor>
     </contributors>
-    
     <scm>
         <connection>scm:git:git@github.com/NicholasAStuart/myo-java.git</connection>
         <url>git@github.com/NicholasAStuart/myo-java.git</url>
         <developerConnection>scm:git:git@github.com/NicholasAStuart/myo-java.git</developerConnection>
     </scm>
-    
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
@@ -70,7 +64,7 @@
                     <execution>
                         <id>attach-sources</id>
                         <goals>
-                            <goal>jar</goal>
+                            <goal>jar-no-fork</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -89,7 +83,31 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.3</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
