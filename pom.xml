@@ -11,7 +11,6 @@
         <artifactId>oss-parent</artifactId>
         <version>9</version>
     </parent>
-    
     <name>Myo Java API</name>
     <description>Java API for Thalmic's Myo device.</description>
     <url>https://github.com/NicholasAStuart/myo-java</url>
@@ -80,6 +79,10 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
