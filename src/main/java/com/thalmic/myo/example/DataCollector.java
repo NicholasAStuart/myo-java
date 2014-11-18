@@ -48,12 +48,12 @@ public class DataCollector implements DeviceListener {
     }
 
     @Override
-    public void onArmRecognized(Myo myo, long timestamp, Arm arm, XDirection xDirection) {
+    public void onArmSync(Myo myo, long timestamp, Arm arm, XDirection xDirection) {
 	whichArm = arm;
     }
 
     @Override
-    public void onArmLost(Myo myo, long timestamp) {
+    public void onArmUnsync(Myo myo, long timestamp) {
 	whichArm = null;
     }
 

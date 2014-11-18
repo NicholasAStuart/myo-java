@@ -17,10 +17,10 @@ public class AbstractDeviceListener implements DeviceListener {
     public void onDisconnect(Myo myo, long timestamp) {}
 
     @Override
-    public void onArmRecognized(Myo myo, long timestamp, Arm arm, XDirection xDirection) {}
+    public void onArmSync(Myo myo, long timestamp, Arm arm, XDirection xDirection) {}
 
     @Override
-    public void onArmLost(Myo myo, long timestamp) {}
+    public void onArmUnsync(Myo myo, long timestamp) {}
 
     @Override
     public void onPose(Myo myo, long timestamp, Pose pose) {}
