@@ -93,18 +93,24 @@ public class DataCollector implements DeviceListener {
 	String yDisplay = String.format("[%s%s]", repeatCharacter('*', (int) pitchW), repeatCharacter(' ', (int) (SCALE - pitchW)));
 	String zDisplay = String.format("[%s%s]", repeatCharacter('*', (int) yawW), repeatCharacter(' ', (int) (SCALE - yawW)));
 
-	String poseString = null;
+	String armString = null;
 	if (whichArm != null) {
+	    armString = String.format("[%s]", whichArm == Arm.ARM_LEFT ? "L" : "R");
+	} else {
+	    armString = String.format("[?]");
+	}
+	String poseString = null;
+	if (currentPose != null) {
 	    String poseTypeString = currentPose.getType()
 		    .toString();
-	    poseString = String.format("[%s][%s%" + (SCALE - poseTypeString.length()) + "s]", whichArm == Arm.ARM_LEFT ? "L" : "R", poseTypeString, " ");
+	    poseString = String.format("[%s%" + (SCALE - poseTypeString.length()) + "s]", poseTypeString, " ");
 	} else {
-	    poseString = String.format("[?][%14s]", " ");
+	    poseString = String.format("[%14s]", " ");
 	}
-
 	builder.append(xDisplay);
 	builder.append(yDisplay);
 	builder.append(zDisplay);
+	builder.append(armString);
 	builder.append(poseString);
 	return builder.toString();
     }
