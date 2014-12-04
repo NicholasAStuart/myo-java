@@ -1,17 +1,15 @@
 package com.thalmic.myo.example;
 
-import com.thalmic.myo.DeviceListener;
-import com.thalmic.myo.FirmwareVersion;
+import com.thalmic.myo.AbstractDeviceListener;
 import com.thalmic.myo.Myo;
 import com.thalmic.myo.Pose;
 import com.thalmic.myo.Quaternion;
-import com.thalmic.myo.Vector3;
 import com.thalmic.myo.enums.Arm;
 import com.thalmic.myo.enums.PoseType;
 import com.thalmic.myo.enums.VibrationType;
 import com.thalmic.myo.enums.XDirection;
 
-public class DataCollector implements DeviceListener {
+public class DataCollector extends AbstractDeviceListener {
     private static final int SCALE = 18;
     private double rollW;
     private double pitchW;
@@ -55,42 +53,6 @@ public class DataCollector implements DeviceListener {
     @Override
     public void onArmUnsync(Myo myo, long timestamp) {
 	whichArm = null;
-    }
-
-    @Override
-    public void onUnlock(Myo myo, long timestamp) {
-    }
-
-    @Override
-    public void onLock(Myo myo, long timestamp) {
-    }
-
-    @Override
-    public void onAccelerometerData(Myo myo, long timestamp, Vector3 accel) {
-    }
-
-    @Override
-    public void onConnect(Myo myo, long timestamp, FirmwareVersion firmwareVersion) {
-    }
-
-    @Override
-    public void onDisconnect(Myo myo, long timestamp) {
-    }
-
-    @Override
-    public void onPair(Myo myo, long timestamp, FirmwareVersion firmwareVersion) {
-    }
-
-    @Override
-    public void onUnpair(Myo myo, long timestamp) {
-    }
-
-    @Override
-    public void onGyroscopeData(Myo myo, long timestamp, Vector3 gyro) {
-    }
-
-    @Override
-    public void onRssi(Myo myo, long timestamp, int rssi) {
     }
 
     @Override
