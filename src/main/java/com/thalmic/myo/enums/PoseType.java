@@ -6,7 +6,6 @@ public enum PoseType {
     WAVE_IN,
     WAVE_OUT,
     FINGERS_SPREAD,
-    RESERVED_1,
-    THUMB_TO_PINKY,
+    DOUBLE_TAP,
     UNKNOWN
 }

@@ -22,6 +22,12 @@ public class AbstractDeviceListener implements DeviceListener {
     @Override
     public void onArmUnsync(Myo myo, long timestamp) {}
 
+	@Override
+	public void onUnlock(Myo myo, long timestamp) {}
+
+	@Override
+	public void onLock(Myo myo, long timestamp) {}
+	
     @Override
     public void onPose(Myo myo, long timestamp, Pose pose) {}
 
