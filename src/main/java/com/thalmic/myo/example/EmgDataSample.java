@@ -16,7 +16,7 @@ public class EmgDataSample {
 			if (myo == null) {
 				throw new RuntimeException("Unable to find a Myo!");
 			}
-			
+
 			System.out.println("Connected to a Myo armband!");
 			myo.setStreamEmg(StreamEmgType.STREAM_EMG_ENABLED);
 			DeviceListener dataCollector = new EmgDataCollector();
