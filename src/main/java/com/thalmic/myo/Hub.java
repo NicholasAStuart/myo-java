@@ -93,15 +93,19 @@ public final class Hub {
 	    File macMyoTempFile = new File(TEMP_DIRECTORY_LOCATION, "libmyo.jnilib");
 	    InputStream macMyoInputStream = this.getClass()
 		    .getResourceAsStream("/osx/libmyo.jnilib");
-	    Files.copy(macMyoInputStream, macMyoTempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-	    macMyoTempFile.deleteOnExit();
+	    if (!macMyoTempFile.exists()) {
+		Files.copy(macMyoInputStream, macMyoTempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		macMyoTempFile.deleteOnExit();
+	    }
 
 	    File myoFrameworkCompleteDirectory = new File(TEMP_DIRECTORY_LOCATION + "/myo.framework/Versions/A/myo");
 	    myoFrameworkCompleteDirectory.mkdirs();
 	    InputStream macMyoLibInputStream = this.getClass()
 		    .getResourceAsStream("/osx/myo.framework/Versions/A/myo");
-	    Files.copy(macMyoLibInputStream, myoFrameworkCompleteDirectory.toPath(), StandardCopyOption.REPLACE_EXISTING);
-	    myoFrameworkCompleteDirectory.deleteOnExit();
+	    if (!myoFrameworkCompleteDirectory.exists()) {
+		Files.copy(macMyoLibInputStream, myoFrameworkCompleteDirectory.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		myoFrameworkCompleteDirectory.deleteOnExit();
+	    }
 
 	    setLibDirectory();
 	    System.loadLibrary("myo");
@@ -155,15 +159,18 @@ public final class Hub {
 	    File myo64DllTempFile = new File(TEMP_DIRECTORY_LOCATION, "myo64.dll");
 	    InputStream myo64DllInputStream = this.getClass()
 		    .getResourceAsStream("/x64/myo64.dll");
-	    Files.copy(myo64DllInputStream, myo64DllTempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+	    if (!myo64DllTempFile.exists()) {
+		Files.copy(myo64DllInputStream, myo64DllTempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		myo64DllTempFile.deleteOnExit();
+	    }
 
 	    File jniJavaMyoLibDllTempFile = new File(TEMP_DIRECTORY_LOCATION, "JNIJavaMyoLib64.dll");
 	    InputStream jniJavaMyoLibDllInputStream = this.getClass()
 		    .getResourceAsStream("/x64/JNIJavaMyoLib.dll");
-	    Files.copy(jniJavaMyoLibDllInputStream, jniJavaMyoLibDllTempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-
-	    myo64DllTempFile.deleteOnExit();
-	    jniJavaMyoLibDllTempFile.deleteOnExit();
+	    if (!jniJavaMyoLibDllTempFile.exists()) {
+		Files.copy(jniJavaMyoLibDllInputStream, jniJavaMyoLibDllTempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		jniJavaMyoLibDllTempFile.deleteOnExit();
+	    }
 
 	    System.loadLibrary("myo64");
 	    System.loadLibrary("JNIJavaMyoLib64");
@@ -185,15 +192,18 @@ public final class Hub {
 	    myo32DllTempFile.deleteOnExit();
 	    InputStream myo32DllInputStream = this.getClass()
 		    .getResourceAsStream("/Win32/myo32.dll");
-	    Files.copy(myo32DllInputStream, myo32DllTempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+	    if (!myo32DllTempFile.exists()) {
+		Files.copy(myo32DllInputStream, myo32DllTempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		myo32DllTempFile.deleteOnExit();
+	    }
 
 	    File jniJavaMyoLibDllTempFile = new File(TEMP_DIRECTORY_LOCATION, "JNIJavaMyoLib32.dll");
 	    InputStream jniJavaMyoLibDllInputStream = this.getClass()
 		    .getResourceAsStream("/Win32/JNIJavaMyoLib.dll");
-	    Files.copy(jniJavaMyoLibDllInputStream, jniJavaMyoLibDllTempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-
-	    myo32DllTempFile.deleteOnExit();
-	    jniJavaMyoLibDllTempFile.deleteOnExit();
+	    if (!jniJavaMyoLibDllTempFile.exists()) {
+		Files.copy(jniJavaMyoLibDllInputStream, jniJavaMyoLibDllTempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		jniJavaMyoLibDllTempFile.deleteOnExit();
+	    }
 
 	    System.loadLibrary("myo32");
 	    System.loadLibrary("JNIJavaMyoLib32");
