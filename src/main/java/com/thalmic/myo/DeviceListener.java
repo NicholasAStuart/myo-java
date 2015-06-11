@@ -1,6 +1,8 @@
 package com.thalmic.myo;
 
 import com.thalmic.myo.enums.Arm;
+import com.thalmic.myo.enums.WarmupResult;
+import com.thalmic.myo.enums.WarmupState;
 import com.thalmic.myo.enums.XDirection;
 
 public interface DeviceListener {
@@ -12,7 +14,7 @@ public interface DeviceListener {
 
 	public void onDisconnect(Myo myo, long timestamp);
 
-	public void onArmSync(Myo myo, long timestamp, Arm arm, XDirection xDirection);
+	public void onArmSync(Myo myo, long timestamp, Arm arm, XDirection xDirection, WarmupState warmupState);
 
 	public void onArmUnsync(Myo myo, long timestamp);
 
@@ -30,5 +32,9 @@ public interface DeviceListener {
 
 	public void onRssi(Myo myo, long timestamp, int rssi);
 
+	public void onBatteryLevelReceived(Myo myo, long timestamp, int level);
+
 	public void onEmgData(Myo myo, long timestamp, byte[] emg);
+
+	public void onWarmupCompleted(Myo myo, long timestamp, WarmupResult warmupResult);
 }
