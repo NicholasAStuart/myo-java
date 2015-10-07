@@ -23,7 +23,7 @@ public class AbstractDeviceListener implements DeviceListener {
 	}
 
 	@Override
-	public void onArmSync(Myo myo, long timestamp, Arm arm, XDirection xDirection, WarmupState warmupState) {
+	public void onArmSync(Myo myo, long timestamp, Arm arm, XDirection xDirection, float rotation, WarmupState warmupState) {
 	}
 
 	@Override

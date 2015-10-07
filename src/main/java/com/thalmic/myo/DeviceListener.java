@@ -14,7 +14,7 @@ public interface DeviceListener {
 
 	public void onDisconnect(Myo myo, long timestamp);
 
-	public void onArmSync(Myo myo, long timestamp, Arm arm, XDirection xDirection, WarmupState warmupState);
+	public void onArmSync(Myo myo, long timestamp, Arm arm, XDirection xDirection, float rotation, WarmupState warmupState);
 
 	public void onArmUnsync(Myo myo, long timestamp);
 
