@@ -52,7 +52,7 @@ public final class Quaternion {
     }
 
     public final Quaternion conjugate() {
-	return new Quaternion(-x, -y, -z, -w);
+	return new Quaternion(-x, -y, -z, w);
     }
 
     public static Quaternion fromAxisAngle(Vector3 axis, double angle) {
