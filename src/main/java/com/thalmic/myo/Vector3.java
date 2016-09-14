@@ -51,7 +51,7 @@ public class Vector3 {
     }
 
     public Vector3 cross(Vector3 rightHandSide) {
-	return new Vector3(x * rightHandSide.z - z * rightHandSide.y, z * rightHandSide.x - x * rightHandSide.z, x * rightHandSide.y - y * rightHandSide.x);
+	return new Vector3(y * rightHandSide.z - z * rightHandSide.y, z * rightHandSide.x - x * rightHandSide.z, x * rightHandSide.y - y * rightHandSide.x);
     }
 
     public double angleTo(Vector3 rightHandSide) {
